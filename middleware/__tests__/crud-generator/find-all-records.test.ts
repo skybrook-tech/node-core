@@ -1,6 +1,7 @@
+// TODO: make test independent of parent
 import findAllRecords from "../../crud-generator/find-all-records";
-import db from "../../../db/models";
-import createTestModel from "../../../factories/__testModel__";
+import db from "../../../../db/models";
+import createTestModel from "../../../../factories/__testModel__";
 
 afterAll(async () => {
   await db.__testModel__.destroy({ where: {} });

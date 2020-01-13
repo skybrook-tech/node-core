@@ -1,11 +1,12 @@
+// TODO: make test independent of parent
 "use strict";
 import createCrudMiddleware from "../../crud-generator/create-crud-middleware";
-import db from "../../../db/models";
+import db from "../../../../db/models";
 import setupServerDefaults from "../../../utils/setup-server-defaults";
 import express from "express";
 import createController from "../../../utils/create-controller";
 import request from "supertest";
-import createTestModel from "../../../factories/__testModel__";
+import createTestModel from "../../../../factories/__testModel__";
 import findOneRecord from "../../crud-generator/find-one-record";
 
 const router = express.Router();
