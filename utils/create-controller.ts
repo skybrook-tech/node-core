@@ -12,10 +12,10 @@ const addParentId = (parentIdKey: string) => (req: Request, res: Response, next:
 
 const getIncluded = (Model: any) => (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { sequelizeParams = {} } = res.locals;
+    const { sequelizeParams = {}, context = {} } = res.locals;
 
     if (Model.getIncluded) {
-      // res.locals.sequelizeParams = { ...sequelizeParams, include: Model.getIncluded(db) };
+      res.locals.sequelizeParams = { ...sequelizeParams, include: Model.getIncluded(context.db) };
     }
 
     next();

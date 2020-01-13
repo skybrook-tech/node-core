@@ -27,7 +27,7 @@ const setupServerDefaults = (config: Config = {}) => {
   dotenv.config();
 
   app.use((req, res, next) => {
-    res.locals = locals;
+    res.locals = { ...locals };
     next();
   });
 

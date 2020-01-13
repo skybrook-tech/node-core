@@ -53,6 +53,10 @@ const requireJwt = (
   res: Sequelize.Response,
   next: Sequelize.NextFunction
 ) => {
+  if (req.headers["internal-auth"] === process.env.INTERNAL_SERVICE_AUTH) {
+    return next();
+  }
+
   passport.authenticate("jwt", { session: false }, (err: any, user: any, failuresOrInfo: any) => {
     if (failuresOrInfo) {
       const message = failuresOrInfo.message;
