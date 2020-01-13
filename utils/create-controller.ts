@@ -1,9 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import defaultResponse from "../middleware/defaults/response";
 import pluralize from "pluralize";
-import get from "lodash/get";
-// import db from "../db/models";
-
 import { CreateControllerConfig, CreateControllerResult } from "./create-controller.types";
 
 const addParentId = (parentIdKey: string) => (req: Request, res: Response, next: NextFunction) => {

@@ -74,10 +74,7 @@ const requireJwt = (
 };
 
 const authenticationMiddlewares = {
-  // register,
   initializePassport: passport.initialize(),
-  // signJwtForUser,
-  // login,
   requireJwt
 };
 
