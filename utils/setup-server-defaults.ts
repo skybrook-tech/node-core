@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 
 interface Config {
   routes?: any;
+  globalMiddleware?: any;
 }
 
 interface Locals {
@@ -19,7 +20,7 @@ const locals = {
 } as Locals;
 
 const setupServerDefaults = (config: Config = {}) => {
-  const { routes } = config;
+  const { routes, globalMiddleware } = config;
 
   const app = express();
 
@@ -36,11 +37,15 @@ const setupServerDefaults = (config: Config = {}) => {
   app.use(cors());
   app.use(middleware.defaults.authentication.initializePassport);
 
+  if (globalMiddleware) {
+    app.use(globalMiddleware);
+  }
+
   if (routes) {
     app.use(routes);
   }
 
-  // app.use(middleware.errorHandler);
+  app.use(middleware.defaults.errorHandler);
 
   return app;
 };
