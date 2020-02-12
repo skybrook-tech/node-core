@@ -6,7 +6,7 @@ import setupServerDefaults from "../../../utils/setup-server-defaults";
 import express from "express";
 import createController from "../../../utils/create-controller";
 import request from "supertest";
-import createTestModel from "../../../../factories/__testModel__";
+import createTestModel from "../../../factories/__testModel__";
 import findOneRecord from "../../crud-generator/find-one-record";
 
 const router = express.Router();
