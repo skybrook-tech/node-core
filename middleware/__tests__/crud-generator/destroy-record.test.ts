@@ -2,7 +2,7 @@
 import destroyRecord from "../../crud-generator/destroy-record";
 import findOneRecord from "../../crud-generator/find-one-record";
 import db from "../../../../db/models";
-import createTestModel from "../../../../factories/__testModel__";
+import createTestModel from "../../../factories/__testModel__";
 import errors from "../../../errors";
 
 afterAll(async () => {

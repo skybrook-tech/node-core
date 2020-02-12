@@ -1,6 +1,6 @@
 import express from "express";
 import { MiddlewareFunction } from "../create-controller.types";
-import db from "../../db/models";
+import db from "../../../db/models";
 import request from "supertest";
 import createController from "../create-controller";
 

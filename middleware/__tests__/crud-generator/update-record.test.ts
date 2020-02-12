@@ -1,7 +1,7 @@
 // TODO: make test independent of parent
 import updateRecord from "../../crud-generator/update-record";
 import db from "../../../../db/models";
-import createTestModel from "../../../../factories/__testModel__";
+import createTestModel from "../../../factories/__testModel__";
 import errors from "../../../errors";
 
 afterAll(async () => {
